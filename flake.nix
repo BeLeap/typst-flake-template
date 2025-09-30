@@ -1,15 +1,31 @@
 {
-  description = "A very basic flake";
+  description = "Typst flake template";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-  };
+        typst = pkgs.typst.withPackages (p: with p; [ ]);
+      in
+      {
+        devShells.default = pkgs.mkShellNoCC {
+          packages = with pkgs; [
+            typst
+            tinymist
+          ];
+        };
+      }
+    );
 }

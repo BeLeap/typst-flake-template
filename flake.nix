@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    press.url = "github:RossSmyth/press";
   };
 
   outputs =
@@ -11,19 +12,26 @@
       self,
       nixpkgs,
       flake-utils,
+      press,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs { inherit system; };
-
-        typst = pkgs.typst.withPackages (p: with p; [ ]);
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ (import press) ];
+        };
       in
-      {
-        devShells.default = pkgs.mkShellNoCC {
+      rec {
+        packages.default = pkgs.buildTypstDocument {
+          name = "main";
+          src = ./.;
+        };
+        devShells.default = pkgs.mkShell {
+          inputsFrom = [ packages.default ];
           packages = with pkgs; [
-            typst
             tinymist
+            typstyle
           ];
         };
       }

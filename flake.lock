@@ -34,10 +34,45 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1758916627,
+        "narHash": "sha256-fB2ISCc+xn+9hZ6gOsABxSBcsCgLCjbJ5bC6U9bPzQ4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "53614373268559d054c080d070cfc732dbe68ac4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "press": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1759176269,
+        "narHash": "sha256-ssJRFNb4Ap/D5Pvc23Q/UEdDTolDG7zbGYvmW97LJz4=",
+        "owner": "RossSmyth",
+        "repo": "press",
+        "rev": "b58e2d4ce2c4cf028e0efa80d8c2d230553132e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "RossSmyth",
+        "repo": "press",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "press": "press"
       }
     },
     "systems": {

@@ -4,7 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+
     press.url = "github:RossSmyth/press";
+    typst-live.url = "github:ItsEthra/typst-live";
   };
 
   outputs =
@@ -13,6 +15,7 @@
       nixpkgs,
       flake-utils,
       press,
+      typst-live,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -32,6 +35,7 @@
           packages = with pkgs; [
             tinymist
             typstyle
+            (typst-live.packages.${system}.default)
           ];
         };
       }

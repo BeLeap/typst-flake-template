@@ -1,3 +1,5 @@
-= Lorem Ipsum
+#set text(size: 10pt, font: "NanumMyeongjo")
 
-Dolor Sit
+= Hello, world!
+
+안녕, 세계!

@@ -11,18 +11,16 @@
     beleap-overlay.url = "github:BeLeap/nix-overlay";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      press,
-      typst-live,
-      beleap-overlay,
-    }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    press,
+    typst-live,
+    beleap-overlay,
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-      let
+      system: let
         pkgs = import nixpkgs {
           inherit system;
           overlays = [
@@ -30,8 +28,7 @@
             (import beleap-overlay)
           ];
         };
-      in
-      rec {
+      in rec {
         packages.default = pkgs.buildTypstDocument {
           name = "main";
           src = ./.;
@@ -40,7 +37,7 @@
           ];
         };
         devShells.default = pkgs.mkShell {
-          inputsFrom = [ packages.default ];
+          inputsFrom = [packages.default];
           packages = with pkgs; [
             tinymist
             typstyle

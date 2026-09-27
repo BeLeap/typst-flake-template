@@ -30,6 +30,8 @@
         };
       in rec {
         packages.default = pkgs.buildTypstDocument {
+          pname = "main";
+          version = "0.1.0";
           name = "main";
           src = ./.;
           fonts = with pkgs; [

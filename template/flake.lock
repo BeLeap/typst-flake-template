@@ -55,11 +55,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1709610799,
-        "narHash": "sha256-5jfLQx0U9hXbi2skYMGodDJkIgffrjIOgMRjZqms2QE=",
+        "lastModified": 1700327093,
+        "narHash": "sha256-OgYvlBABxJYWhZ/HBd0bPVcIEkT+xDhDCpRYqtVhYWY=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "81c393c776d5379c030607866afef6406ca1be57",
+        "rev": "ae7cd510e508ee03d792005c2f1c0a3ff25ecb80",
         "type": "github"
       },
       "original": {
@@ -164,11 +164,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1709386671,
-        "narHash": "sha256-VPqfBnIJ+cfa78pd4Y5Cr6sOWVW8GYHRVucxJGmRf8Q=",
+        "lastModified": 1700538105,
+        "narHash": "sha256-uZhOCmwv8VupEmPZm3erbr9XXmyg7K67Ul3+Rx2XMe0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fa9a51752f1b5de583ad5213eb621be071806663",
+        "rev": "51a01a7e5515b469886c120e38db325c96694c2f",
         "type": "github"
       },
       "original": {
@@ -255,15 +255,16 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1771684602,
-        "narHash": "sha256-SOcqVbJ2wJFtAqA7+/aYC8s0B55NZOXELXVSQjwmYis=",
+        "lastModified": 1704635018,
+        "narHash": "sha256-KewI1EotmqTI0pJ9pXPbYYTx7ZYR1CfqmVJkwwOQqsQ=",
         "owner": "ItsEthra",
         "repo": "typst-live",
-        "rev": "772a85be79795578f92d9b90d04b64b4fe20a539",
+        "rev": "4e974f2cfd41470ab8f73c871c64f03683807b8f",
         "type": "github"
       },
       "original": {
         "owner": "ItsEthra",
+        "ref": "v0.7.0",
         "repo": "typst-live",
         "type": "github"
       }

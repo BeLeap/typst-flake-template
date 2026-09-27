@@ -25,7 +25,7 @@
           inherit system;
           overlays = [
             (import press)
-            (import beleap-overlay)
+            beleap-overlay.overlays.default
           ];
         };
       in rec {

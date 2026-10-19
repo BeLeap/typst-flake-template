@@ -38,6 +38,12 @@
             nanum-myeongjo
           ];
         };
+        checks.valid-pdf = pkgs.runCommand "main-valid-pdf" {
+          nativeBuildInputs = [pkgs.qpdf];
+        } ''
+          qpdf --check ${packages.default}
+          touch "$out"
+        '';
         devShells.default = pkgs.mkShell {
           inputsFrom = [packages.default];
           packages = with pkgs; [
